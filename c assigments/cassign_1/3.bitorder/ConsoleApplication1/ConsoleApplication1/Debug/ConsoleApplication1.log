@@ -1,0 +1,8 @@
+﻿  threeon.c
+  bitorder.c
+c:\users\cdac\desktop\assignment_1\bitorder.c(6): warning C4013: 'threeon' undefined; assuming extern returning int
+c:\users\cdac\desktop\assignment_1\bitorder.c(14): warning C4013: 'byteorderrev' undefined; assuming extern returning int
+c:\users\cdac\desktop\assignment_1\bitorder.c(16): warning C4013: 'rotatebyone' undefined; assuming extern returning int
+  Generating Code...
+  ConsoleApplication1.vcxproj -> C:\Users\cdac\Desktop\assignment_1\ConsoleApplication1\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> C:\Users\cdac\Desktop\assignment_1\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)
