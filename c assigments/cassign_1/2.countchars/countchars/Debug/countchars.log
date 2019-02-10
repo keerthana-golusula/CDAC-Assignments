@@ -1,0 +1,9 @@
+﻿  Source.c
+c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\countchars\source.c(15): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\countchars\source.c(15): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\countchars\source.c(15): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\countchars\source.c(15): note: this argument is used as a buffer size
+c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\countchars\source.c(58): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+  countchars.vcxproj -> C:\Users\cdac\Desktop\assignment1\assignment-1-at-cdac\countchars\Debug\countchars.exe
+  countchars.vcxproj -> C:\Users\cdac\Desktop\assignment1\assignment-1-at-cdac\countchars\Debug\countchars.pdb (Full PDB)

@@ -1,0 +1,7 @@
+﻿  Source.c
+c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\calculator\calculator\source.c(52): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\calculator\calculator\source.c(52): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\calculator\calculator\source.c(52): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\cdac\desktop\assignment1\assignment-1-at-cdac\calculator\calculator\source.c(52): note: this argument is used as a buffer size
+  calculator.vcxproj -> C:\Users\cdac\Desktop\assignment1\assignment-1-at-cdac\calculator\Debug\calculator.exe
+  calculator.vcxproj -> C:\Users\cdac\Desktop\assignment1\assignment-1-at-cdac\calculator\Debug\calculator.pdb (Full PDB)
