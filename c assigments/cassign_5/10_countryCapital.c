@@ -12,7 +12,7 @@ int main() {
 		printf("if you want to enter, press y");
 		scanf("%c", &c);
 		if (c == 'y') {
-			scanf("%[^\n]s", str[i]);
+			scanf("%s", str[i]);
 			fputs(str[i], fp);
 			i++;
 		}else{

@@ -5,13 +5,13 @@ struct date {
 const int mon[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
 int countLeap(struct date d) {
 	int year = d.y;
-	if (d.m < 1||(d.m=1&&d.d<29)) {
+	if (year!=0 && d.m <=2)) {
 		year--;
 	}
 	return ((year / 4) - (year / 100) + (year / 400));
 }
 
-long diffInDates(struct date d1, struct date d2) {
+long int diffInDates(struct date d1, struct date d2) {
 	long int days1, days2;
 	days1 = d1.y * 365+ d1.d;
 	d1.m=d1.m-2;
