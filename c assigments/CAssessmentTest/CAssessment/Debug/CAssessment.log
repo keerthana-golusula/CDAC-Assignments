@@ -1,0 +1,9 @@
+﻿  rotateAndReplace.c
+c:\users\cdac\desktop\cassessment\cassessment\rotateandreplace.c(14): warning C4013: 'strcpy_s' undefined; assuming extern returning int
+c:\users\cdac\desktop\cassessment\cassessment\rotateandreplace.c(14): warning C4013: 'strlen' undefined; assuming extern returning int
+c:\users\cdac\desktop\cassessment\cassessment\rotateandreplace.c(13): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\cdac\desktop\cassessment\cassessment\rotateandreplace.c(13): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\cdac\desktop\cassessment\cassessment\rotateandreplace.c(13): note: the missing variadic argument 2 is required by format string '%s'
+  c:\users\cdac\desktop\cassessment\cassessment\rotateandreplace.c(13): note: this argument is used as a buffer size
+  CAssessment.vcxproj -> C:\Users\cdac\Desktop\CAssessment\Debug\CAssessment.exe
+  CAssessment.vcxproj -> C:\Users\cdac\Desktop\CAssessment\Debug\CAssessment.pdb (Full PDB)
