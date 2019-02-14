@@ -5,7 +5,7 @@ struct date {
 const int mon[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
 int countLeap(struct date d) {
 	int year = d.y;
-	if (year!=0 && d.m <=2)) {
+	if (year!=0 && (d.m <2 ||(d.m==2 &&d.d<29))) {
 		year--;
 	}
 	return ((year / 4) - (year / 100) + (year / 400));

@@ -6,11 +6,10 @@ int main() {
 	char str[190][30];
 	FILE *fp;
 	fopen_s(&fp, "countrycapital.txt", "w+");
-	printf("Enter counties and capitals in country:capital format");
+	printf("Enter counties and capitals in country:capital format\n");
 	i = 0;
+	scanf("%c", &c);
 	while (1) {
-		printf("if you want to enter, press y");
-		scanf("%c", &c);
 		if (c == 'y') {
 			scanf("%[^\n]s", str[i]);
 			fputs(str[i], fp);
@@ -18,10 +17,12 @@ int main() {
 		}else{
 			break;
 		}
+		printf("if you want to enter, press y");
+		scanf("%c", &c);
 }
 	rewind(fp);
 	while ((ch = fgetc(fp)) != EOF) {
-		printf("%c", c);
+		printf("%c", ch);
 	}
 
 	fclose(fp);
