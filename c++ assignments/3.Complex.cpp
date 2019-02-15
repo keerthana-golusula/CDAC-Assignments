@@ -18,17 +18,17 @@ public:
 	void display() {
 		cout << real << "+i" << img << endl;
 	}
-	friend Complex Add(Complex , Complex);
-	friend Complex Mul(Complex , Complex);
+	friend Complex Add(Complex& , Complex&);
+	friend Complex Mul(Complex& , Complex&);
 
 };
-Complex Add(Complex c1, Complex c2) {
+Complex Add(Complex& c1, Complex& c2) {
 	Complex temp;
 	temp.real = c1.real+c2.real;
 	temp.img = c1.img + c2.img;
 	return temp;
 }
-Complex Mul(Complex c1, Complex c2) {
+Complex Mul(Complex& c1, Complex& c2) {
 	Complex temp;
 	temp.real = c1.real*c2.real - (c1.img*c2.img);
 	temp.img = c1.real*c2.img + (c1.img*c2.real);
