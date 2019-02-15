@@ -23,19 +23,22 @@ class Employee{
 		friend ostream& operator<<(ostream& cout,Employee e);	
 	
 };
-istream& operator>>(istream& in,Employee &e){
+istream& operator>>(istream& cin,Employee &e){
 	cin>>e.empno>>e.name>>e.salary;
+	return cin;
 }
-ostream& operator<<(ostream& out,Employee e){
+ostream& operator<<(ostream& cout,Employee e){
 	cout<<e.empno<<" "<<e.name<<" "<<e.salary<<endl;
+	return cout;
 }
 int main(){
 	int n;
 	cout<<"enter no. of employees\n";
 	cin>>n;
-	Employee emp[n];
+	Employee *emp;
+	emp= new Employee[n];
 	for(int i=0;i<n;i++){
-		cout<<"enter employee"<<i<<":";
+		cout<<"enter employee"<<i+1<<":";
 		cin>>emp[i];
 	}
 	for(int i=0;i<n;i++){
