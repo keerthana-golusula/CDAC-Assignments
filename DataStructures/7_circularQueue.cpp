@@ -1,15 +1,15 @@
 #include<iostream>
 using namespace std;
-class queue {
+class cqueue {
 	int r, f, size;
 	int *q;
 public:
-	queue() {
+	cqueue() {
 		size = 0;
 		r = f = -1;
 		q = NULL;
 	}
-	queue(int x) {
+	cqueue(int x) {
 		size = x;
 		r = f = -1;
 		q = new int[x];
@@ -17,12 +17,14 @@ public:
 	void enque(int x) {
 		if (r == -1 && f == -1) {
 			f = 0;
-			q[++r] = x;
+			r = 0;
+			q[r] = x;
 		}
 		else {
 			if (!overflow())
 			{
-				q[++r] = x;
+				r = (r + 1) % size;
+				q[r] = x;
 			}
 			else
 				cout << "overflow!! cannot be inserted" << endl;
@@ -38,37 +40,41 @@ public:
 				r = f = -1;
 			}
 			else {
-				x = q[f++];
+				x = q[f];
+				f = (f + 1) % size;
 			}
 		}
 		return x;
 	}
 	bool overflow() {
-		if (r == size - 1)
+		if (f==(r+1)%size)
 			return true;
 		return false;
 	}
 	bool underflow() {
-		if (r == -1 && f == -1) {
+		if (r ==-1 &&f==-1) {
 			return true;
 		}
 		return false;
 	}
 	void display() {
 		if (f != -1) {
-			for (int i = f; i <= r; i++)
+			int i;
+			for (i = f; i != r; i=(i+1)%size)
 				cout << q[i] << " ";
+			cout << q[i];
 		}
+
 		else
 			cout << "no elements in queue" << endl;
 	}
 
 };
 int main() {
-	int n,x,op;
+	int n, x, op;
 	cout << "enter the size of queue" << endl;
 	cin >> n;
-	queue q(n);
+	cqueue q(n);
 	while (1) {
 		cout << "choose the choice" << endl;
 		cout << "1.enque the queue" << endl;
@@ -101,9 +107,4 @@ int main() {
 		}
 	}
 
- }
-
-
-
-
-
+}
