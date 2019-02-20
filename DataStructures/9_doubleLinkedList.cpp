@@ -6,7 +6,7 @@ struct Node {
 	struct Node *next;
 };
 class doubleLL {
-	struct node *start;
+	struct Node *start;
 public:
 	doubleLL() {
 		start = NULL;
@@ -96,7 +96,7 @@ public:
 	int deleteFirst() {
 		int x = -999;
 		if (start != NULL) {
-			struct node *temp;
+			struct Node *temp;
 			temp = start;
 			if (temp->next != NULL)
 				temp->next->prev = NULL;
@@ -119,7 +119,7 @@ public:
 			if (curr->prev != NULL)
 			{
 				curr->prev->next = NULL;
-			delete temp;
+			delete curr;
 			}
 			else {
 				delete start;
@@ -132,8 +132,9 @@ public:
 		return x;
 	}
 	void deleteSpec(int x) {
-		int x = -999;
+		//int x = -999;
 		if (start != NULL) {
+			struct Node *curr;
 			curr = start;
 			while (curr != NULL && curr->data != x)
 				curr = curr->next;
@@ -146,7 +147,7 @@ public:
 				if (curr->next != NULL) {
 					curr->next->prev = curr->prev;
 				}
-				x = curr->data;
+				//x = curr->data;
 				delete curr;
 			}
 			else
@@ -155,7 +156,7 @@ public:
 		else
 			cout << "list is empty" << endl;
 
-		return x;
+		//return x;
 	}
 	void traverseForward() {
 		struct Node *curr;
@@ -174,19 +175,28 @@ public:
 			while (curr->next != NULL) {
 				curr = curr->next;
 			}
+			cout << "curr" << curr->data << endl;
 			while (curr != NULL) {
-				cout << curr->data << " ;"
+				cout << curr->data << " ";
 					curr = curr->prev;
 			}
 		}
 		else
 			cout << "no elements in list" << endl;
 	}
+	~doubleLL() {
+		struct Node *temp;
+		while (start != NULL) {
+			temp = start;
+			start = temp->next;
+			delete temp;
+		}
+	}
 
 };
 int main() {
 	int x, s, op;
-	List ll;
+	doubleLL ll;
 	while (1) {
 		cout << "choose the choice:" << endl;
 		cout << "1.insert at begining" << endl;
@@ -198,7 +208,7 @@ int main() {
 		cout << "7.delete a specific element" << endl;
 		cout << "8.forward traversal" << endl;
 		cout << "9.backward traversal" << endl;
-		cout << "10.reverse the list" << endl;
+		//cout << "10.reverse the list" << endl;
 		cout << "11.exit" << endl;
 		cin >> op;
 		switch (op) {
@@ -220,7 +230,7 @@ int main() {
 		case 4:
 			cout << "enter element to be inserted and before which element ";
 			cin >> x >> s;
-			ll.insertAfter(s, x);
+			ll.insertBefore(s, x);
 			break;
 		case 5:
 			x = ll.deleteFirst();
@@ -241,9 +251,9 @@ int main() {
 		case 9:
 			ll.traverseBackward();
 			break;
-		case 10:
+		/*case 10:
 			ll.reverse();
-			break;
+			break;*/
 		case 11:
 			exit(0);
 		default:
