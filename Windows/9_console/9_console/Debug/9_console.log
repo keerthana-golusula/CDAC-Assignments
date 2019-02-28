@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\9_console\9_console\source.cpp(27): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HANDLE'
+  9_console.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\9_console\Debug\9_console.exe
+  9_console.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\9_console\Debug\9_console.pdb (Full PDB)

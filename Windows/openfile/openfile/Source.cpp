@@ -27,6 +27,7 @@ int main(int argc,LPTSTR argv[]) {
 		getchar();
 		return -1;
 	}
+	
 	CloseHandle(hFile);
 	_tprintf(_T("Text from (%s) %s\n"), argv[1], buffer);
 	getchar();
