@@ -16,14 +16,17 @@ int main(int argc,LPTSTR argv[]) {
 		return -1;
 	}
 
-	_tprintf(_T("file %s opened successfully"),  argv[1]);
+	_tprintf(_T("file %S opened successfully"),  argv[1]);
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
-	if (CreateProcess(TEXT("process.exe"), L"hello", NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi)) {
+
+	printf("hFile:%p", hFile);
+	if (CreateProcess(TEXT("C:/Users/cdac/Desktop/assignments/Ncrwork-CDAC-Assignments/Windows/9_console/Debug/process.exe"), (LPTSTR)&hFile, NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi)) {
 		getchar();
+		printf("opened process successfully\n");
 		printf("%d\n", pi.hProcess);
 		printf("%d\n", pi.dwProcessId);
 

@@ -1,0 +1,3 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\13_threadsuspend\debug\13_threadsuspend.exe' is denied.
+  Source.cpp
+LINK : fatal error LNK1104: cannot open file 'C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\13_threadsuspend\Debug\13_threadsuspend.exe'
