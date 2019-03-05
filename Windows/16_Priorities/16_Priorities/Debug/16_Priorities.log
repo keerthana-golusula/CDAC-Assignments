@@ -1,0 +1,8 @@
+﻿  Source.cpp
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\16_priorities\source.cpp(18): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LPWSTR'
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\16_priorities\source.cpp(21): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LPWSTR'
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\16_priorities\source.cpp(22): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HANDLE'
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\16_priorities\source.cpp(25): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HANDLE'
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\16_priorities\source.cpp(34): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HANDLE'
+  16_Priorities.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\16_Priorities\Debug\16_Priorities.exe
+  16_Priorities.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\16_Priorities\Debug\16_Priorities.pdb (Full PDB)

@@ -20,6 +20,7 @@ int main() {
 		printf("unable to create thread Error:%d\n", GetLastError());
 		return -1;
 	}
+	printf("to break the thread press any character\n");
 	getchar();
 	//WaitForSingleObject(hThread, INFINITE);
 	GetExitCodeThread(hThread, &dwExitCode);

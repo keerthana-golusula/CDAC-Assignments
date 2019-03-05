@@ -12,7 +12,7 @@ int main(int argc,LPWSTR argv[]) {
 
 	//printf("%S", argv[1]);
 	getchar();
-	TCHAR buffer[] =TEXT("this is text from child process");
+	TCHAR buffer[] =TEXT("this is text written from child process");
 	DWORD dwnbr;
 	printf("continue\n");
 	BOOL ret = WriteFile(hfile, buffer, sizeof(buffer), &dwnbr, NULL);

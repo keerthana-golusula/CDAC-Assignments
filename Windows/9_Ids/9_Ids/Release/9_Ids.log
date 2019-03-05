@@ -1,0 +1,8 @@
+﻿  Source.cpp
+Source.cpp(42): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HANDLE'
+Source.cpp(28): warning C4101: 'hproc': unreferenced local variable
+  Generating code
+  Finished generating code
+  All 9 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  9_Ids.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\9_Ids\Release\9_Ids.exe
+  9_Ids.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\9_Ids\Release\9_Ids.pdb (Full PDB)

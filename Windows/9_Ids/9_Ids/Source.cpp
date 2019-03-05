@@ -30,13 +30,15 @@ int main() {
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
-	if (!CreateProcess(_T("NOTEPAD"),0, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+	getchar();
+	if (!CreateProcess(NULL,TEXT("NOTEPAD"), NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
 	{
 		_tprintf(_T("Creation of a process failed error:%d"), GetLastError());
 		getchar();
 		return -1;
 	}
 	else {
+		getchar();
 		printf("%d\n", pi.hProcess);
 		printf("%d\n", pi.dwProcessId);
 		printf("id of process %ld", GetProcessId(pi.hProcess));
