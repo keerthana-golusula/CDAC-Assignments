@@ -1,5 +1,6 @@
 #include<iostream>
 //#include<stack>
+#include<string.h>
 using namespace std;
 bool isOperator(char ch) {
 	if (ch == '+' || ch == '-' || ch == '*' || ch == '/')
