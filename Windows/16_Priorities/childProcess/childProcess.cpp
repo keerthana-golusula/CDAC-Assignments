@@ -20,9 +20,9 @@ int main(int argc, LPWSTR argv[]) {
 	}
 	printf("entered into child process");
 	getchar();
-	printf("%ld", argv[0]);
-	HANDLE hProc = (HANDLE)(*argv[0]);
-	printf("%ld", hProc);
+	printf("%d", argv[0]);
+	HANDLE hProc = (HANDLE)*argv[0];
+	printf("%p ", hProc);
 	BOOL ret = SetPriorityClass(hProc, BELOW_NORMAL_PRIORITY_CLASS);
 	if (ret == 0) {
 		printf("priority set failed Error:%d", GetLastError());

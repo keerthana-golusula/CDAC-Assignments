@@ -11,18 +11,18 @@ int main() {
 	ZeroMemory(&pi, sizeof(pi));
 
 	//printf("hFile:%p", hFile);
-	static LPWSTR str2;
-	str2 = (LPWSTR)&pi.hProcess;
+	static LPTSTR str2;
+	str2 = (LPTSTR)&pi.hProcess;
 	/*WCHAR *str;
 	str =(WCHAR)&pi.hProcess;*/
-	printf("%d", str2);
+	printf("%d ", str2);
 	if (CreateProcess(TEXT("C:/Users/cdac/Desktop/assignments/Ncrwork-CDAC-Assignments/Windows/16_Priorities/Debug/childProcess.exe"),str2, NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi)) {
 		//str = (WCHAR)&pi.hProcess;
-		printf("%d", str2);
-		printf("%d", (HANDLE)*str2);
+		printf("%d ", str2);
+		printf("%p ", (HANDLE)*str2);
 		BOOL ret = SetPriorityClass(pi.hProcess, HIGH_PRIORITY_CLASS);
 		printf("Current Priority of child process is %d", GetPriorityClass(pi.hProcess));
-		printf("%d", pi.hProcess);
+		printf("%p", pi.hProcess);
 		if (ret==0)
 		{
 			printf("priority didnot set Error:%d", GetLastError());

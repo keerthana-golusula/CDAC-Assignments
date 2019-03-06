@@ -1,5 +1,4 @@
 ﻿  childProcess.cpp
-c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\childprocess\childprocess.cpp(23): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 1 has type 'LPWSTR'
-c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\childprocess\childprocess.cpp(25): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 1 has type 'HANDLE'
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\16_priorities\childprocess\childprocess.cpp(23): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LPWSTR'
   childProcess.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\16_Priorities\Debug\childProcess.exe
   childProcess.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\16_Priorities\Debug\childProcess.pdb (Full PDB)

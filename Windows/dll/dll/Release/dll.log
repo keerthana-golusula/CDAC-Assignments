@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\dll\release\dll.dll' is denied.
+  dll.cpp
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\dll\dll\dll.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+dll.cpp(2): warning C4273: 'add': inconsistent dll linkage
+  c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\dll\dll\dll.h(7): note: see previous definition of 'add'
+dll.cpp(5): warning C4273: 'sub': inconsistent dll linkage
+  c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\dll\dll\dll.h(8): note: see previous definition of 'sub'
+LINK : fatal error LNK1104: cannot open file 'C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\dll\Release\dll.dll'

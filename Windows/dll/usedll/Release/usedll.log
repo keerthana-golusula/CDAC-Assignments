@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\dll\release\usedll.exe' is denied.
+  Source.cpp
+C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\dll\dll\dll.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+LINK : fatal error LNK1104: cannot open file 'C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\dll\Release\usedll.exe'
