@@ -1,0 +1,9 @@
+﻿  Source.cpp
+Source.cpp(12): warning C4101: 'str3': unreferenced local variable
+  Generating code
+  1 of 56 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+  Finished generating code
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  calculator.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\c assigments\cassign_1\calculator\Release\calculator.exe
+  calculator.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\c assigments\cassign_1\calculator\Release\calculator.pdb (Full PDB)

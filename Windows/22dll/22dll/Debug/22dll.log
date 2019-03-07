@@ -1,7 +1,4 @@
 ﻿  Source.cpp
 c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\mydll\mydll\mydll.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\22dll\22dll\source.cpp(7): warning C4101: 'MUL': unreferenced local variable
-c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\22dll\22dll\source.cpp(7): warning C4101: 'SUB': unreferenced local variable
-c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\windows\22dll\22dll\source.cpp(7): warning C4101: 'DIV': unreferenced local variable
   22dll.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\22dll\Debug\22dll.exe
   22dll.vcxproj -> C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\Windows\22dll\Debug\22dll.pdb (Full PDB)

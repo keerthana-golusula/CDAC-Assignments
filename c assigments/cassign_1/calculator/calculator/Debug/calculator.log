@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\c assigments\cassign_1\calculator\debug\calculator.exe' is denied.
+  sub.c
+  mul.c
+  divi.c
+  add.c
+  Generating Code...
+  Source.cpp
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\c assigments\cassign_1\calculator\calculator\source.cpp(139): warning C4018: '<': signed/unsigned mismatch
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\c assigments\cassign_1\calculator\calculator\source.cpp(242): warning C4101: 'str2': unreferenced local variable
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\c assigments\cassign_1\calculator\calculator\source.cpp(19): warning C4715: 'precedence': not all control paths return a value
+c:\users\cdac\desktop\assignments\ncrwork-cdac-assignments\c assigments\cassign_1\calculator\calculator\source.cpp(177): warning C4172: returning address of local variable or temporary: str2
+LINK : fatal error LNK1104: cannot open file 'C:\Users\cdac\Desktop\assignments\Ncrwork-CDAC-Assignments\c assigments\cassign_1\calculator\Debug\calculator.exe'

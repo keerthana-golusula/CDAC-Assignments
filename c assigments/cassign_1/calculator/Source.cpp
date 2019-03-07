@@ -129,6 +129,7 @@ char* infixToPostfix(char * str) {
 	int k = 0;
 	for (int i = 0; i < strlen(str); i++) {
 		if (isOperator(str[i])) {
+			if(str[i]!='(')
            str2[k++]='@';
 			if (st.isEmpty()) {
 				st.push(str[i]);
@@ -235,7 +236,7 @@ int main() {
 	cout << "enter the string" << endl;
 	cin >> str;
 	strcpy(str2,infixToPostfix(str));
-	cout << "postfix form of given string is: " << str2;
+   cout << "postfix form of given string is: " << str2;
 	long res;
 	res=postEval(str2);
 	cout << "result of the expression is:" << res;
