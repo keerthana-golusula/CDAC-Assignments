@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title> Appendind text</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+       $("#input").keyup(function(){
+       $("#span").text($(this).val());
+           
+       }); 
+        
+        
+    });
+    
+    </script>
+    </head>
+<body>
+    <input id="input">
+<br>
+    <p id="para">
+        hello!! <span id="span"></span>
+    </p>
+    </body>
+
+</html>

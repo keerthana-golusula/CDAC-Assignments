@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>
+Changing background image</image>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+</title>
+</head>
+<body background="sunder.jpg" >
+<p id="para" style="background-color:red">This is paragraph</p>
+<button onclick="changebg()">Change</button>
+<script type="text/javascript">
+console.log("hello");
+function changebg(){
+document.body.style.backgroundImage="url('tree.jpg')";
+//document.getElementsByTagname("BODY").background="tree.jpg";
+console.log("hello2");
+document.getElementById("para").style.backgroundColor="blue";
+}
+</script>
+</body>
+</html>

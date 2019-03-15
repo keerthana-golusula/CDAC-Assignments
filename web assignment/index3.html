@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>first program</title>
+</head>
+<body>
+<input id="input1" type="number">
+<input id="input2" type="number">
+<button id="add" onclick="add1()">add</button>
+<p id="para">output is:</p>
+<script>
+function add1(){
+var val1=Number(document.getElementById("input1").value);
+var val2=Number(document.getElementById("input2").value);
+var val3=val1+val2;
+//window.alert(val1);
+document.getElementById("para").innerHTML +=val3;
+}
+
+</script>
+
+</body>
+
+</html>

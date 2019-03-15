@@ -1,0 +1,77 @@
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   <script>
+    
+   $(document).ready(function(){
+  $("#check").change(function(){
+if($(this).is(":checked")){
+    console.log("checked");
+    //console.log($("#cHouseno").value);
+    $("#pHouseno").val($("#cHouseno").val());
+    $("#pLocality").val($("#cLocality").val());
+    $("#pMandal").val($("#cMandal").val());
+    $("#pState").val($("#cState").val());
+    $("#ppincode").val($("#cpincode").val());
+    
+}else{
+    console.log("unchecked");
+    $("#pHouseno").val(" ");
+    $("#pLocality").val(" ");
+    $("#pMandal").val(" ");
+    $("#pState").val(" ");
+    $("#ppincode").val(" ");
+    
+    
+}
+  });
+});  
+    </script>
+
+    </head>
+    <body style="text-align: center">
+    <h2>Current Address</h2>
+    <form>
+       House No: <input type="text" id="cHouseno"><br /><br/>
+        Locality:<input type="text" id="cLocality"><br/><br/>
+        Mandal<input type="text" id="cMandal"><br/><br/>
+<!--        State:<input type="text" id="cState"><br/><br/>-->
+        State: <select id="cState">
+        <option value="telangana">telangana
+        </option>
+        <option value="andrapradesh">Andhrapradesh</option>
+        <option value="maharastra">Maharastra</option>
+        <option value="tamilnadu">TamilNadu </option>
+        <option value="karnataka">Karnataka</option>
+        <option value="kerala">Kerala</option>
+        </select>
+        PinCode:<input type=number id="cpincode">
+        </form>
+        
+    <h2>Permanent Address</h2>
+    <form>
+        <input type="checkbox" id="check" > Same as Current Address
+        <br>
+        <br/>
+        House No: <input type="text" id="pHouseno"><br/><br/>
+        Locality:<input type="text" id="pLocality"><br /><br/>
+        Mandal<input type="text" id="pMandal"><br/><br/>
+<!--        State:<input type="text" id="pState"><br/><br/>-->
+        State: <select id="pState">
+        <option value="telangana">telangana
+        </option>
+        <option value="andrapradesh">Andhrapradesh</option>
+        <option value="maharastra">Maharastra</option>
+        <option value="tamilnadu">TamilNadu </option>
+        <option value="karnataka">Karnataka</option>
+        <option value="kerala">Kerala</option>
+        </select>
+        PinCode:<input type=number id="ppincode">
+        </form>
+    
+    </body>
+
+
+
+</html>

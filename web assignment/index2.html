@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>assignment no 7</title>
+</head>
+<body>
+<h1>Student Details Form</h1>
+<form action="usermgmt.jsp" >
+<table>
+<tr><th>Name</th><td><input type="text" placeholder="enter your name" id="name" name="name" ></td></tr>
+<tr><th>Date of Birth</th><td><input type=date id="dob" onchange=getAge(id)></td></tr>
+<tr><th>Age</th><td><span id="age"></span></td></tr
+<tr><th>Department</th><td><select><option value="cse">Computer science</option><option value="ece">Electronics</option><option value="eee">Electrical</option><option value="civil">Civil</option><option value="bme">Biomedical</option><option value="mech">Mechanical</option></select></td></tr>
+<tr><th>Year</th><td><select><option value="1">I</option><option value="2">II</option><option value="3">III</option><option value="4">IV</option></select></td></tr>
+<tr><th>Email</th> <td><input type="email" name="email"></td></tr>
+
+<tr><th>Photo</th><td><input type="file" onchange="previewFile()" placeholder="upload your image"></td></tr>
+<tr><th>Preview</th><td><img src="" height="100" alt="Image preview..."></td></tr>
+</table>
+<input type="button" value="Submit" onclick="submit()">
+</form>
+<!--<input type="number" id=date><input type="number" id=mon><input type=number id="year">-->
+<script>
+function getAge(dob){
+var today = new Date();
+//alert(today);
+var str=document.getElementById("dob").value;
+var age;
+var date=Number(str[8]+str[9]);
+var mon=Number(str[5]+str[6]);
+var year=Number(str[0]+str[1]+str[2]+str[3]);
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+//console.log(date+" "+mon+" "+year);
+if(mm>mon||(mm==mon&&dd>date)){
+age=yyyy-year;
+}else{
+age=yyyy-year-1;
+}
+document.getElementById("age").innerHTML=age;
+//alert(age);
+//var date=new Date();
+//date=id.value;
+//alert(date);
+}
+   function previewFile(){
+       var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+ // previewFile();  //calls the function named previewFile()
+   function submit(){
+var dob=document.getElementById("DOB").value;
+window.alert(dob);
+}
+  </script>
+</body>
+
+</html>
