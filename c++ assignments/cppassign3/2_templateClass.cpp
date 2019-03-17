@@ -2,26 +2,32 @@
 using namespace std;
 #define SIZE 10
 template<class T>
+// template class definition
 class Stack
 {
     int size;
 	int top;
 	T *arr;
 	public:
+		// default constructor
 		stack(){
 			size=0;
 			top=-1;
 			arr=NULL;
 		}
+		// parameterized constructor
 		Stack(int x)
 		{
 			size=x;
 			top=-1;
 			arr=new T[x];
 		}
+		// destructor
 		~Stack()
 			{
+				delete arr; 
 			}
+			// push function definiton
 		void push (T x)
 		{
 			try
@@ -38,6 +44,7 @@ class Stack
 				cout<<s<<endl;
 			}
 		}
+		// pop function definiton
 		T pop()
 		{
 			try
@@ -54,6 +61,7 @@ class Stack
 				cout<<s<<endl;
 			}
 		}
+		// display function definition
     void display(){
     	for(int i=0;i<size;i++){
     		cout<<arr[i]<<" ";
@@ -63,66 +71,64 @@ class Stack
 };
 int main()
 {
-int n,op,x;
+int size,option,ele;
 
 	cout<<"stack for int elements"<<endl;
-	
 	cout<<"enter size for stack";
-	cin>>n;
-		Stack<int> s1(n);
+	cin>>size;
+		Stack<int> IntStack(size);
 	 while(1){
-
 	cout<<"choose your choice:"<<endl;
 	cout<<"1.push"<<endl;
 	cout<<"2.pop"<<endl;
 	cout<<"3.display"<<endl;
-	cin>>op;
-	if(op>=4){
+	cin>>option;
+	if(option>=4){
 		break;
 	}
-	switch(op){
+	switch(option){
 		case 1:
 			cout<<"enter the element to be pushed";
-			cin>>x;
-			s1.push(x);
+			cin>>ele;
+			IntStack.push(ele);
 			break;
 		case 2:
-				x=s1.pop();
-				cout<<"popped element is:"<<x;
+				ele=IntStack.pop();
+				cout<<"popped element is:"<<ele;
 				break;
 	      case 3:
-		  	s1.display();
+		  	IntStack.display();
 		  	break;
 	}
 }
-	
+	// flaot stack object definition
 	cout<<"stack for float elements  "<<endl;
 	 cout<<"enter size for stack";
-	cin>>n;
-		Stack<float> s2(n);
-		float x2;
+	cin>>size;
+		Stack<float> FloatStack(size);
+		float ele2;
 	 while(1){
 
 	cout<<"choose your choice:"<<endl;
 	cout<<"1.push"<<endl;
 	cout<<"2.pop"<<endl;
 	cout<<"3.display"<<endl;
-	cin>>op;
-	if(op>=4){
+	cin>>option;
+	if(option>=4){
 		break;
 	}
-	switch(op){
+	switch(option){
 		case 1:
 			cout<<"enter the element to be pushed";
-			cin>>x2;
-			s2.push(x);
+			cin>>ele2;
+			FloatStack.push(ele2);
 			break;
 		case 2:
-				x=s2.pop();
-				cout<<"popped element is:"<<x;
+				ele2=FloatStack.pop();
+				cout<<"popped element is:"<<ele2;
 				break;
 	      case 3:
-		  	s2.display();
+		  	FloatStack.display();
 		  	break;
 	}
 }
