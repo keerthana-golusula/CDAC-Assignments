@@ -14,7 +14,7 @@ int main() {
 	cin >> str;
 	//cout << str;
 strcpy_s(str2, infixToPostfix(str));
-	cout << "postfix form of given string is: " << str2;
+	//cout << "postfix form of given string is: " << str2;
 	int res;
 	res = postEval(str2);
 	cout << "result of the expression is:" << res;

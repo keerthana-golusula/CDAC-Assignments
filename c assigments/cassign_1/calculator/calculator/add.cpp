@@ -1,4 +1,4 @@
-//#include<stdio.h>
+//addition of two numbers
 int add(int x, int y) {
 
 	int temp = x + y;

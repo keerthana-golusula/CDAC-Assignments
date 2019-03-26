@@ -2,9 +2,10 @@
 #include<string.h>
 void deletec(char *,int);
 void add(char *,int,char);
+
 int main(){
 	int i,k;
-	char a,b;
+	char before,after;
 	char str[50];
 	//char *str;
 	printf("enter the input string\n");
@@ -13,30 +14,31 @@ int main(){
 	for(i=0;i<strlen(str);i++){
 		if(str[i]=='-'){
 			k=i;
-			if (str[i - 1] >= 65 && str[i - 1] <= 90) {
+			if (str[i - 1] >= 65 && str[i - 1] <= 90) {   // A-Z
 				if (str[i + 1] > 90 || str[i + 1] < str[i - 1])
 					continue;
 			}
-			else if (str[i - 1] >= 97 && str[i - 1] <= 122) {
+			else if (str[i - 1] >= 97 && str[i - 1] <= 122) {    //a-z
 				if (str[i + 1] > 122 || str[i + 1] < str[i - 1])
 					continue;
 			}
-			else if (str[i - 1] >= 48 && str[i - 1] <= 57) {
+			else if (str[i - 1] >= 48 && str[i - 1] <= 57) {    // 0-9
 				if (str[i + 1] > 57 || str[i + 1] < str[i - 1])
 					continue;
 			}
 			else {
-				i++;  //after - , any special character just increment it.
+			//after - , any special character just increment it.
+				i++;
 				continue;
 			}
 		//if(str[k-1]<str[k+1]){
-			a=str[k-1];
-			b=str[k+1]-1;
+			before=str[k-1];
+			after=str[k+1]-1;
 			deletec(str,k);//deletion of character '-'
 			
-			while(a<b){
-				add(str,k,b);// additon of character in between a and b
-				b=b-1;
+			while(before<after){
+				add(str,k,after);// additon of character in between a and b
+				after=after-1;
 			}
 	//}
 		}
@@ -46,12 +48,12 @@ printf("%s",str);
 }
 // addition of character into string
 void add(char *str,int k,char ch){
-	int t=strlen(str)+1;
-	while(t!=k){
-		str[t]=str[t-1];
-		t--;	
+	int temp=strlen(str)+1;
+	while(temp!=k){
+		str[temp]=str[temp-1];
+		temp--;	
 	}
-	str[t]=ch;
+	str[temp]=ch;
 }
 //deletion of character from the string
 void deletec(char *str,int k){

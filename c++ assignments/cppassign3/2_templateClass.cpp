@@ -1,6 +1,7 @@
 #include<iostream>
+#include<string>
 using namespace std;
-#define SIZE 10
+
 template<class T>
 // template class definition
 class Stack
@@ -10,7 +11,7 @@ class Stack
 	T *arr;
 	public:
 		// default constructor
-		stack(){
+		Stack(){
 			size=0;
 			top=-1;
 			arr=NULL;
@@ -45,7 +46,7 @@ class Stack
 			}
 		}
 		// pop function definiton
-		T pop()
+	void pop()
 		{
 			try
 			{
@@ -53,8 +54,14 @@ class Stack
 				{
 					cout<<"stack is empty\n";
 					throw "can't pop from the stack";
+					
 				}
-				return arr[top--];
+				else {
+					T ret = arr[top--];
+				//	delete arr[top--];
+					cout << "popped element is:" << ret;
+					//return ret;
+				}
 			}
 			catch(char *s)
 			{
@@ -63,75 +70,207 @@ class Stack
 		}
 		// display function definition
     void display(){
-    	for(int i=0;i<size;i++){
+    	for(int i=0;i<=top;i++){
     		cout<<arr[i]<<" ";
 		}
 	}
 	
 };
+class complex {
+	float real;
+	float img;
+public:
+	complex() {
+		real = img = 0;
+	}
+	complex(float a, float b) {
+		real = a;
+		img = b;
+	}
+	complex(complex &c) {
+		real = c.real;
+		img = c.img;
+	}
+	~complex() {
+		//cout << "in destructor";
+	}
+
+	complex operator=(complex c) {
+		real = c.real;
+		img = c.img;
+		return *this;
+	}
+	friend ostream& operator<<(ostream&, complex c);
+	friend istream& operator >> (istream&, complex &c);
+};
+
+ostream& operator<<(ostream& cout, complex c) {
+	std::cout << c.real << "+i" << c.img << endl;
+	return cout;
+}
+istream& operator >> (istream& cin, complex &c) {
+	cin >> c.real >> c.img;
+	return cin;
+}
 int main()
 {
-int size,option,ele;
-
-	cout<<"stack for int elements"<<endl;
-	cout<<"enter size for stack";
-	cin>>size;
+	int size,option,stackOption;
+	cout << "choose the type of stack:";
+	cout << "1.int\n2.float\n3.complex\n4.String\n";
+		cin >> stackOption;
+	switch (stackOption) {
+	case 1:
+	{
+		cout << "stack for int elements" << endl;
+		cout << "enter size for stack";
+		cin >> size;
 		Stack<int> IntStack(size);
-	 while(1){
-	cout<<"choose your choice:"<<endl;
-	cout<<"1.push"<<endl;
-	cout<<"2.pop"<<endl;
-	cout<<"3.display"<<endl;
-	cin>>option;
-	if(option>=4){
+		int ele;
+		while (1) {
+			cout << "choose your choice:" << endl;
+			cout << "1.push" << endl;
+			cout << "2.pop" << endl;
+			cout << "3.display" << endl;
+			cout << "4.exit" << endl;
+			cin >> option;
+			switch (option) {
+			case 1:
+				cout << "enter the element to be pushed";
+				cin >> ele;
+				IntStack.push(ele);
+				break;
+			case 2:
+				 IntStack.pop();
+				break;
+			case 3:
+				IntStack.display();
+				break;
+			case 4:
+				exit(0);
+			default:
+				cout << "choose valid option";
+				break;
+			}
+		}
 		break;
 	}
-	switch(option){
-		case 1:
-			cout<<"enter the element to be pushed";
-			cin>>ele;
-			IntStack.push(ele);
-			break;
-		case 2:
-				ele=IntStack.pop();
-				cout<<"popped element is:"<<ele;
-				break;
-	      case 3:
-		  	IntStack.display();
-		  	break;
-	}
-}
-	// flaot stack object definition
-	cout<<"stack for float elements  "<<endl;
-	 cout<<"enter size for stack";
-	cin>>size;
+	case 2:
+	{ // flaot stack object definition
+		cout << "stack for float elements  " << endl;
+		cout << "enter size for stack";
+		cin >> size;
 		Stack<float> FloatStack(size);
 		float ele2;
-	 while(1){
+		while (1) {
 
-	cout<<"choose your choice:"<<endl;
-	cout<<"1.push"<<endl;
-	cout<<"2.pop"<<endl;
-	cout<<"3.display"<<endl;
-	cin>>option;
-	if(option>=4){
+			cout << "choose your choice:" << endl;
+			cout << "1.push" << endl;
+			cout << "2.pop" << endl;
+			cout << "3.display" << endl;
+			cout << "4.exit" << endl;
+			cin >> option;
+			switch (option) {
+			case 1:
+				cout << "enter the element to be pushed";
+				cin >> ele2;
+				FloatStack.push(ele2);
+				break;
+			case 2:
+				FloatStack.pop();
+				
+				break;
+			case 3:
+				FloatStack.display();
+				break;
+			case 4:
+				exit(0);
+			default:
+				cout << "choose valid option";
+				break;
+			}
+		}
 		break;
 	}
-	switch(option){
-		case 1:
-			cout<<"enter the element to be pushed";
-			cin>>ele2;
-			FloatStack.push(ele2);
-			break;
-		case 2:
-				ele2=FloatStack.pop();
-				cout<<"popped element is:"<<ele2;
+	case 3:
+	{	// complex stack object definition
+		cout << "stack for complex elements  " << endl;
+		cout << "enter size for stack";
+		cin >> size;
+		Stack<complex> ComplexStack(size);
+		complex ele3;
+		while (1) {
+
+			cout << "choose your choice:" << endl;
+			cout << "1.push" << endl;
+			cout << "2.pop" << endl;
+			cout << "3.display" << endl;
+			cout << "4.exit" << endl;
+			cin >> option;
+			
+			switch (option) {
+			case 1:
+				cout << "enter the element to be pushed";
+				cin >> ele3;
+				ComplexStack.push(ele3);
 				break;
-	      case 3:
-		  	FloatStack.display();
-		  	break;
+			case 2:
+				 ComplexStack.pop();
+			
+				break;
+			case 3:
+				ComplexStack.display();
+				break;
+			case 4:
+				exit(0);
+			default:
+				cout << "choose valid option";
+				break;
+			}
+		}
+		break;
 	}
-}
+	case 4:
+	{	// string stack object definition
+		cout << "stack for string elements  " << endl;
+		cout << "enter size for stack";
+		cin >> size;
+		Stack<string> StringStack(size);
+		string ele4;
+		while (1) {
+
+			cout << "choose your choice:" << endl;
+			cout << "1.push" << endl;
+			cout << "2.pop" << endl;
+			cout << "3.display" << endl;
+			cout << "4.exit" << endl;
+			cin >> option;
+
+			switch (option) {
+			case 1:
+				cout << "enter the element to be pushed";
+				cin >> ele4;
+				StringStack.push(ele4);
+				break;
+			case 2:
+				 StringStack.pop();
+
+				break;
+			case 3:
+				StringStack.display();
+				break;
+			case 4:
+				exit(0);
+			default:
+				cout << "choose valid option";
+				break;
+			}
+		}
+		break;
+	}
+	default:
+		cout << "enter valid option";
+		break;
+	}
 	
 	return 0;
 }

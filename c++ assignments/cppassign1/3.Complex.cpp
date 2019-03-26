@@ -1,5 +1,6 @@
 // complex class and usage of friend function.
 #include<iostream>
+#include<string>
 using namespace std;
 class Complex {
 	float real;
@@ -27,12 +28,14 @@ public:
 	friend Complex mulComplex(Complex& , Complex&);
 
 };
+// addition of two complex numbers
 Complex addComplex(Complex& c1, Complex& c2) {
 	Complex temp;
 	temp.real = c1.real+c2.real;
 	temp.img = c1.img + c2.img;
 	return temp;
 }
+// multiplication of two complex numbers
 Complex mulComplex(Complex& c1, Complex& c2) {
 	Complex temp;
 	temp.real = c1.real*c2.real - (c1.img*c2.img);
@@ -46,10 +49,10 @@ int main() {
 	cout << "c2 is: ";
 	c2.display();
 	c3 = addComplex(c1, c2);
-	cout << "After addition:";
+	cout << "After addition: ";
 	c3.display();
 	c4 = mulComplex(c1, c2);
-	cout << "After multiplication:";
+	cout << "After multiplication: ";
 	c4.display();
 
 }

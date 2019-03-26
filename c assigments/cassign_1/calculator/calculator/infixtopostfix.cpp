@@ -2,7 +2,7 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-
+//finds the precendence of the operator
 int precedence(char ch) {
 	if (ch == '(')
 		return 0;
@@ -11,11 +11,13 @@ int precedence(char ch) {
 	if (ch == '*' || ch == '/')
 		return 2;
 }
+// finds whether given char is operator or not
 bool isOperator(char ch) {
 	if (ch == '(' || ch == ')' || ch == '+' || ch == '-' || ch == '*' || ch == '/')
 		return true;
 	return false;
 }
+// character stack class definiton
 class stack {
 	int top;
 	char *s;
@@ -70,6 +72,7 @@ public:
 		delete s;
 	}
 };
+// conversion of infix string to postfix string.
 char* infixToPostfix(char * str) {
 	stack st(20);
 	char str2[20];
@@ -109,7 +112,7 @@ char* infixToPostfix(char * str) {
 	}
 	while (!st.isEmpty())
 		str2[k++] = st.pop();
-	str2[k++] = '\0';
+	str2[k++] = '\0';// inserting \0 at the end of string.
 
 	cout << str2;
 	return str2;

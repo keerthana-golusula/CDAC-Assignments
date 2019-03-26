@@ -19,7 +19,7 @@ class String
 	String(const String &str)
 		{
 			size=strlen(str.s);
-			s=new char[size+1];
+			s=new char[size+1];// dynamic memory allocation
 			strcpy(s,str.s);
 		}
 		// parameterized constructor
@@ -31,62 +31,66 @@ class String
 		// destructor
 	~String()
 		{
-			delete s;
+			delete s;// freeing the memory
 		}
 		// + operator overloaded for concatination
-	void operator+(String s2)
+	void operator+(String str)
 		{
 			int x,i=0,j;
-			x=strlen(s2.s);
+			x=strlen(str.s);
 			i=strlen(s);
 			for(j=i;j<i+x;j++)
 			{
-				s[j]=s2.s[j-i];
+				s[j]=str.s[j-i];
 			}
 		s[j]='\0';
 		}
 		// = operator overloaded for assignment 
-	String operator=(String s1)
+	String operator=(String str)
 	{
 			if(s!=NULL){
 			delete s;	
 		}
-			size=s1.size;
+			size=str.size;
 			s=new char[size+1];
-			strcpy(s,s1.s);
+			strcpy(s,str.s);
 		
 	return *this;
 	}
 	// >> operator overloaded for input
-friend istream &operator >>(istream &cin, String &s1)
-	{
-		std::cin >> s1.size;
-        s1.s=new char[s1.size+1];
-		std::cin >> s1.s;
-		return cin;
-	}
-	// << operator overloaded for output
-	friend ostream &operator <<(ostream &cout, String s1)
+	friend istream &operator >>(istream &cin, String &str)
 		{
-			std::cout << "size is " << s1.size << endl;
-			std::cout << "string is  " << s1.s << endl;
+		cout << "enter size of string:";
+			std::cin >> str.size;
+			cout << "enter the string:";
+			str.s=new char[str.size+1];
+			std::cin >> str.s;
+			return cin;
+		}
+	// << operator overloaded for output
+	friend ostream &operator <<(ostream &cout, String str)
+		{
+			std::cout << "size is " << str.size << endl;
+			std::cout << "string is  " << str.s << endl;
 			return cout;
 		}
 };
 int main()
 {
-    String s1,s2("abc",4),s3(s2); // object initialization with various constructors
-    cout<<"enter a object:"<<endl;
-    cin>>s1;
-    cout<< " string you have given:";
-    cout<<"s1 is "<<s1;//<< operator overloaded for input
-    cout<<"string object which is initialized using parameters";
-    cout<<"s2 is "<<s2;  
-    cout<<"concatination of string s3 with s2";
-    s2+s3;// concatination of strings using + operator
-    cout<<"s2 is "<<s2;// << operator overloaded for ouput 
-    cout<<" assignment of s2 to s1";
-	s1=s2;// assignmentof strings using = operator 
-    cout<<"s1 is "<<s1;
+	String obj1,obj2("abc",4),obj3(obj2); 
+	// object initialization with various constructors
+   
+	cout<<"enter a object 'obj1':"<<endl;
+    cin>>obj1;//<< operator overloaded for input
+    cout<< " string you have given obj1:\n";
+    cout<<obj1; // << operator overloaded for ouput
+    cout<<"string object which is initialized using parameters obj2\n";
+    cout<<obj2;  
+    cout<<"concatination of string obj3 with obj2 \n";
+    obj2+obj3;// concatination of strings using + operator
+    cout<<obj2; 
+    cout<<" assignment of obj2 to obj1\n";
+	obj1=obj2;// assignmentof strings using = operator 
+    cout<<"obj1 is "<<obj1;
 	return 0;
 }

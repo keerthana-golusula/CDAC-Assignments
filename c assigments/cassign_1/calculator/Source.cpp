@@ -234,9 +234,9 @@ int main() {
 	char str[20];
 	char str2[20];
 	cout << "enter the string" << endl;
-	cin >> str;
+	cin >> str; // input from string
 	strcpy(str2,infixToPostfix(str));
-   cout << "postfix form of given string is: " << str2;
+   // cout << "postfix form of given string is: " << str2;
 	long res;
 	res=postEval(str2);
 	cout << "result of the expression is:" << res;
