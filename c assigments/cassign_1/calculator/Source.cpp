@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
+//function to determine the precendence of operator
   int precedence(char ch) {
 	if (ch == '(')
 		return 0;
@@ -9,40 +10,49 @@ using namespace std;
 	if (ch == '*' || ch == '/')
 		return 2;
 }
+// function to find whether given char is operator or not
 bool isOperator(char ch) {
 	if (ch == '(' || ch == ')' || ch == '+' || ch == '-' || ch == '*' || ch == '/')
 		return true;
 	return false;
 }
-class stack2 {
+template<class T>
+// integer stack definition used for postfix evaluation
+class stack {
 	int top;
-	int *s;
+	T *s;
 	int size;
 public:
+	// constructor
 	stack2() {
 		top = -1;
 		s = NULL;
 		size = 0;
 
 	}
-	stack2(int x) {
+	// parameterised constructor
+	stack(T x) {
 		top = -1;
 		size = x;
-		s = new int[x];
+		s = new T[x];
 	}
+	// isFull() checks whether stack is full or not
 	bool isFull() {
 		return (top == size - 1);
 	}
+	// isEmpty() checks whether stack is empty or not
 	bool isEmpty() {
 		return top == -1;
 	}
-	void push(int x) {
+	//push() takes an integer and inserts into stack
+	void push(T x) {
 		if (!isFull())
 			s[++top] = x;
 		else
 			cout << "stack is Full" << endl;
 	}
-	int pop() {
+	// pop() deletes the top most element in stack and returns
+	T pop() {
 		//int x = -999;
 		if (!isEmpty())
 			return s[top--];
@@ -52,79 +62,82 @@ public:
 		}
 		//return x;
 	}
-	int peek() {
+	// peek() returns top most element
+	T peek() {
 		return s[top];
 	}
+	// display() of stack prints all elements from starting to top element
 	void display() {
 		if (isEmpty())
 			cout << "stack is empty" << endl;
 		for (int i = 0; i <= top; i++)
 			cout << s[i] << " ";
 	}
-	~stack2() {
-		delete s;
-	}
-
-
-};
-class stack {
-	int top;
-	char *s;
-	int size;
-public:
-	stack() {
-		top = -1;
-		s = NULL;
-		size = 0;
-
-	}
-	stack(int x) {
-		top = -1;
-		size = x;
-		s = new char[x];
-	}
-	bool isFull() {
-		return (top == size - 1);
-	}
-	bool isEmpty() {
-		return top == -1;
-	}
-	void push(char x) {
-		if (!isFull())
-			s[++top] = x;
-		else
-			cout << "stack is Full" << endl;
-	}
-	char pop() {
-		//int x = -999;
-		if (!isEmpty())
-			return s[top--];
-		else {
-			cout << "Stack is Empty" << endl;
-			return '~';
-		}
-		//return x;
-	}
-	void display() {
-		if (isEmpty())
-			cout << "stack is empty" << endl;
-		for (int i = 0; i <= top; i++)
-			cout << s[i] << " ";
-	}
-	char peek() {
-		if (!isEmpty())
-			return s[top];
-		else
-			return -1;
-	}
+	// destructors deallocates the memory
 	~stack() {
 		delete s;
 	}
 
 
 };
+//class stack {
+//	int top;
+//	char *s;
+//	int size;
+//public:
+//	stack() {
+//		top = -1;
+//		s = NULL;
+//		size = 0;
+//
+//	}
+//	stack(int x) {
+//		top = -1;
+//		size = x;
+//		s = new char[x];
+//	}
+//	bool isFull() {
+//		return (top == size - 1);
+//	}
+//	bool isEmpty() {
+//		return top == -1;
+//	}
+//	void push(char x) {
+//		if (!isFull())
+//			s[++top] = x;
+//		else
+//			cout << "stack is Full" << endl;
+//	}
+//	char pop() {
+//		//int x = -999;
+//		if (!isEmpty())
+//			return s[top--];
+//		else {
+//			cout << "Stack is Empty" << endl;
+//			return '~';
+//		}
+//		//return x;
+//	}
+//	void display() {
+//		if (isEmpty())
+//			cout << "stack is empty" << endl;
+//		for (int i = 0; i <= top; i++)
+//			cout << s[i] << " ";
+//	}
+//	char peek() {
+//		if (!isEmpty())
+//			return s[top];
+//		else
+//			return -1;
+//	}
+//	~stack() {
+//		delete s;
+//	}
+//
+//
+//};
 char* infixToPostfix(char * str) {
-	stack st(20);
+	stack<char> st(20);
 	char str2[20];
 	int k = 0;
 	for (int i = 0; i < strlen(str); i++) {
@@ -173,7 +186,7 @@ char* infixToPostfix(char * str) {
 }
 
 long postEval(char* str) {
-	stack2 st(20);
+	stack<int> st(20);
 	int len = strlen(str);
 	for (int i = 0; i < len; i++) {
 		if (isOperator(str[i]))

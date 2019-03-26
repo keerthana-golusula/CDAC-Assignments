@@ -46,7 +46,7 @@
             <asp:Button ID="Button4" runat="server" Text="View all Student Details" OnClick="Button4_Click" />
         </p>
             
-   
+   <p id="warning" runat="server" style="color:coral"></p>
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
             

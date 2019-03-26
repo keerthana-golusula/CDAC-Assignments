@@ -72,6 +72,13 @@ namespace linqtoXML
 				return this.GetTable<emp>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_procedure")]
+		public ISingleResult<sp_procedureResult> sp_procedure()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_procedureResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.emp")]
@@ -300,6 +307,158 @@ namespace linqtoXML
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class sp_procedureResult
+	{
+		
+		private int _empno;
+		
+		private string _ename;
+		
+		private string _job;
+		
+		private System.Nullable<int> _mgr;
+		
+		private System.Nullable<System.DateTime> _hiredate;
+		
+		private System.Nullable<decimal> _sal;
+		
+		private System.Nullable<decimal> _comm;
+		
+		private System.Nullable<int> _deptno;
+		
+		public sp_procedureResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empno", DbType="Int NOT NULL")]
+		public int empno
+		{
+			get
+			{
+				return this._empno;
+			}
+			set
+			{
+				if ((this._empno != value))
+				{
+					this._empno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ename", DbType="NVarChar(10)")]
+		public string ename
+		{
+			get
+			{
+				return this._ename;
+			}
+			set
+			{
+				if ((this._ename != value))
+				{
+					this._ename = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_job", DbType="NVarChar(9)")]
+		public string job
+		{
+			get
+			{
+				return this._job;
+			}
+			set
+			{
+				if ((this._job != value))
+				{
+					this._job = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mgr", DbType="Int")]
+		public System.Nullable<int> mgr
+		{
+			get
+			{
+				return this._mgr;
+			}
+			set
+			{
+				if ((this._mgr != value))
+				{
+					this._mgr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hiredate", DbType="Date")]
+		public System.Nullable<System.DateTime> hiredate
+		{
+			get
+			{
+				return this._hiredate;
+			}
+			set
+			{
+				if ((this._hiredate != value))
+				{
+					this._hiredate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sal", DbType="Decimal(7,2)")]
+		public System.Nullable<decimal> sal
+		{
+			get
+			{
+				return this._sal;
+			}
+			set
+			{
+				if ((this._sal != value))
+				{
+					this._sal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comm", DbType="Decimal(7,2)")]
+		public System.Nullable<decimal> comm
+		{
+			get
+			{
+				return this._comm;
+			}
+			set
+			{
+				if ((this._comm != value))
+				{
+					this._comm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deptno", DbType="Int")]
+		public System.Nullable<int> deptno
+		{
+			get
+			{
+				return this._deptno;
+			}
+			set
+			{
+				if ((this._deptno != value))
+				{
+					this._deptno = value;
+				}
 			}
 		}
 	}

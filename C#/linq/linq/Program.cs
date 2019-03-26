@@ -91,7 +91,7 @@ namespace linq
         {
             employeelist list = new employeelist();
       
-            var newset = list.emps.ToDictionary(x => x.Id);
+            var newset = list.emps.ToDictionary(emp => emp.Id);
         }
         public static void grouping()
         {
@@ -111,8 +111,8 @@ namespace linq
             Console.WriteLine(list.FirstOrDefault());
             Console.WriteLine(list.ElementAt(0));
             Console.WriteLine(list.ElementAtOrDefault(0));
-           // Console.WriteLine(list.Single());
-            Console.WriteLine(list.SingleOrDefault());
+            //Console.WriteLine(list.Single());
+            //Console.WriteLine(list.SingleOrDefault());
         }
      public static void quantifier()
         {

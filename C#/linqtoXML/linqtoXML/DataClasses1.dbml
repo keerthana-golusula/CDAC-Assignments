@@ -1,1 +1,27 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cdac" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-SS5H7HT;Initial Catalog=cdac;Integrated Security=True" SettingsObjectName="linqtoXML.Properties.Settings" SettingsPropertyName="cdacConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.emp" Member="emps">
+    <Type Name="emp">
+      <Column Name="empno" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ename" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="mgr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hiredate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sal" Type="System.Decimal" DbType="Decimal(7,2)" CanBeNull="true" />
+      <Column Name="comm" Type="System.Decimal" DbType="Decimal(7,2)" CanBeNull="true" />
+      <Column Name="deptno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_procedure" Method="sp_procedure">
+    <ElementType Name="sp_procedureResult">
+      <Column Name="empno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ename" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="mgr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hiredate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sal" Type="System.Decimal" DbType="Decimal(7,2)" CanBeNull="true" />
+      <Column Name="comm" Type="System.Decimal" DbType="Decimal(7,2)" CanBeNull="true" />
+      <Column Name="deptno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
